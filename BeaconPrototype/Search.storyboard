@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ftJ-IN-LOo">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="2Ib-b0-1kz">
+            <objects>
+                <viewController id="ftJ-IN-LOo" customClass="SearchViewController" customModule="BeaconPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OVz-SS-hx8"/>
+                        <viewControllerLayoutGuide type="bottom" id="62n-iz-n4J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rUx-Xx-IXo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GO-SV-uEN">
+                                <rect key="frame" x="249" y="40" width="102" height="30"/>
+                                <state key="normal" title="Start Scanning"/>
+                                <connections>
+                                    <action selector="onTapSearchBeacon:" destination="ftJ-IN-LOo" eventType="touchUpInside" id="8ei-ew-9D2"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="POz-SI-1g6">
+                                <rect key="frame" x="20" y="78" width="560" height="502"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCell" textLabel="HeX-1Z-oZ0" rowHeight="60" style="IBUITableViewCellStyleDefault" id="kzO-X7-Vcl">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kzO-X7-Vcl" id="vl5-WM-amv">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HeX-1Z-oZ0">
+                                                    <rect key="frame" x="15" y="0.0" width="530" height="59"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Nearby Beacons right  now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP6-U4-3YN">
+                                <rect key="frame" x="164" y="317" width="273" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="POz-SI-1g6" firstAttribute="leading" secondItem="rUx-Xx-IXo" secondAttribute="leadingMargin" id="75R-EV-CSX"/>
+                            <constraint firstItem="3GO-SV-uEN" firstAttribute="centerX" secondItem="rUx-Xx-IXo" secondAttribute="centerX" id="7uu-Fl-OaZ"/>
+                            <constraint firstItem="RP6-U4-3YN" firstAttribute="centerY" secondItem="POz-SI-1g6" secondAttribute="centerY" id="8US-N0-U5J"/>
+                            <constraint firstItem="POz-SI-1g6" firstAttribute="trailing" secondItem="rUx-Xx-IXo" secondAttribute="trailingMargin" id="Bh6-og-YUY"/>
+                            <constraint firstItem="62n-iz-n4J" firstAttribute="top" secondItem="POz-SI-1g6" secondAttribute="bottom" constant="20" id="Ovq-to-YGp"/>
+                            <constraint firstItem="RP6-U4-3YN" firstAttribute="centerX" secondItem="POz-SI-1g6" secondAttribute="centerX" id="bcL-6a-wZ5"/>
+                            <constraint firstItem="POz-SI-1g6" firstAttribute="top" secondItem="3GO-SV-uEN" secondAttribute="bottom" constant="8" id="faD-Fv-sNr"/>
+                            <constraint firstItem="3GO-SV-uEN" firstAttribute="top" secondItem="OVz-SS-hx8" secondAttribute="bottom" constant="20" id="g2N-5M-b3J"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="placeholderLabel" destination="RP6-U4-3YN" id="AXx-GU-GMg"/>
+                        <outlet property="tableView" destination="POz-SI-1g6" id="7NZ-JU-3l0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIG-7o-gaS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="361"/>
+        </scene>
+    </scenes>
+</document>
